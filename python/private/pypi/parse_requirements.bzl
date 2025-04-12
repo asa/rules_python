@@ -325,7 +325,7 @@ def _add_dists(*, requirement, index_urls, logger = None):
     shas_to_use = requirement.srcs.shas
     if not shas_to_use:
         version = requirement.srcs.version
-        shas_to_use = index_urls.sha256s_by_version.get(version, [])
+        shas_to_use = index_urls.sha256_by_version.get(version, [])
         if logger:
             logger.warn(lambda: "requirement file has been generated without hashes, will use all hashes for the given version {} that could find on the index:\n    {}".format(version, shas_to_use))
 
